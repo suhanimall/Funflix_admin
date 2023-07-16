@@ -5,7 +5,7 @@ import axios from "axios"
 export const getMovies = async (dispatch) => {
     dispatch(getMoviesStart());
     try {
-        const res = await axios.get("/movies", {
+        const res = await axios.get("https://funflix-backend.onrender.com/api/movies", {
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
             },
@@ -20,7 +20,7 @@ export const getMovies = async (dispatch) => {
 export const deleteMovie = async (id, dispatch) => {
     dispatch(deleteMovieStart());
     try {
-        await axios.delete("/movies/" + id, {
+        await axios.delete("https://funflix-backend.onrender.com/api/movies/" + id, {
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
             },
@@ -35,7 +35,7 @@ export const deleteMovie = async (id, dispatch) => {
 export const createMovie = async (movie, dispatch) => {
     dispatch(createMovieStart());
     try {
-        const res = await axios.post("/movies", movie, {
+        const res = await axios.post("https://funflix-backend.onrender.com/api/movies", movie, {
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
             },

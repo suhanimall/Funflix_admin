@@ -5,7 +5,7 @@ import axios from "axios";
 export const getLists = async (dispatch) => {
     dispatch(getListsStart());
     try {
-        const res = await axios.get("/lists", {
+        const res = await axios.get("https://funflix-backend.onrender.com/api/lists", {
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
             },
@@ -20,7 +20,7 @@ export const getLists = async (dispatch) => {
 export const deleteList = async (id, dispatch) => {
     dispatch(deleteListStart());
     try {
-        await axios.delete("/lists/" + id, {
+        await axios.delete("https://funflix-backend.onrender.com/api/lists/" + id, {
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
             },
@@ -35,7 +35,7 @@ export const deleteList = async (id, dispatch) => {
 export const createList = async (list, dispatch) => {
     dispatch(createListStart());
     try {
-        const res = await axios.post("/lists", list, {
+        const res = await axios.post("https://funflix-backend.onrender.com/api/lists", list, {
             headers: {
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
             },

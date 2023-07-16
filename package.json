@@ -42,5 +42,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://funflix-backend.onrender.com/api/"
+  "proxy": "https://funflix-backend.onrender.com"
 }
